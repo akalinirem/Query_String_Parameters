@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" href="index.html">page html</button>
+
+    <script>
+        const btn = document.getElementById('btn')
+
+        const url = 'http://127.0.0.1:5501/page.html?';
+
+        const obj = {
+            v1:"javascript",
+            v2: "java",
+            v3: "python",
+        };
+
+
+        const searchParams = new URLSearchParams(obj);
+        console.log(searchParams);
+
+        const queryString = searchParams.toString();
+        console.log(queryString);
+
+        btn.addEventListener('click',() =>{
+
+            window.location.href = url + queryString;
+
+        });
+    </script>
+</body>
+</html>
+
+<!-- http://127.0.0.1:5501/page.html?v1=javascript&v2=java&v3=python -->
