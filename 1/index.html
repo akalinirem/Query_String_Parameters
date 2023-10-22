@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" href="page.html">page html</button>
+
+    <script>
+        const btn = document.getElementById('btn')
+
+        const url = 'http://127.0.0.1:5501/page.html?';
+
+        const obj = {
+            v1:"javascript",
+            v2: "java",
+            v3: [ 'chrome', 'firefox', 'safari'],
+        };
+
+
+        const searchParams = new URLSearchParams();
+
+        searchParams.append('v1', JSON.stringify(obj));
+
+        console.log(searchParams);
+
+        const queryString = searchParams.toString();
+        console.log(queryString);
+
+        btn.addEventListener('click',() =>{
+
+            window.location.href = url + queryString;
+
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- http://127.0.0.1:5501/page.html?v1=%7B%22v1%22%3A%22javascript%22%2C%22v2%22%3A%22java%22%2C%22v3%22%3A%5B%22chrome%22%2C%22firefox%22%2C%22safari%22%5D%7D -->

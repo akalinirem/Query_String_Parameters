@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const url = window.location.href;
+
+        const searchParams = new URL(url).searchParams;
+        
+        const entries = new URLSearchParams(searchParams).values();
+
+        const array = Array.from(entries);
+
+        const obj = JSON.parse(array[0]);
+
+        console.log(obj);
+
+    </script>
+
+</body>
+</html>
